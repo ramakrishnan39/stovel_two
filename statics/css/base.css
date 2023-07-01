@@ -1,0 +1,17 @@
+*{
+  padding: 0%;
+  margin-top: 0;
+}
+
+body{
+  background-color: rgb(205, 232, 243);
+}
+
+.d-header{
+  background-color: rgb(131, 224, 193);
+}
+
+.d-footer{
+  background-color: rgb(180, 131, 226);
+}
+

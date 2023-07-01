@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stovel</title>
+  <link rel="icon" href="{% static 'imgs/book.png' %}" type="image/icon type">
+  <link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css">
+  <link rel="stylesheet" href="{% static 'css/stovel.css' %}" type="text/css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <link rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" 
+  integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" 
+  crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+</head>
+<body>
+  <header id="d-header" class="d-header">   
+    <div class="d-title"> 
+      {% if user.is_authenticated %}  
+        <button class="app-title"  onclick="home()" > Stovel </button>
+      {% else %}
+        <button class="app-title" onclick="index()" > Stovel </button>
+      {% endif %}
+    </div>
+
+    <nav id="nav-head-right" class="nav">
+        <ul class="nav-ul">
+            {% if user.is_authenticated %}
+              <li> <a href="/home/"           class="btn" > Home </a> </li>  
+              <li> <a href="/users/profile/"   class="btn" > Profile </a></li>
+              <li> <a href="/users/friends/"   class="btn" > Friends </a></li>
+              <li> <a href="/users/logout/"    class="btn" > Log out </a></li>
+            {% else %}
+              <li> <a href="/users/login/"     class="btn" > Login </a> </li>  
+              <li> <a href="/users/signin/"  class="btn" > Sign up </a></li>
+            {% endif %}
+        </ul>
+    </nav>    
+</header>
+<div class="app-body">
+    {% block stovelbody %}
+    {% endblock %}
+</div>
+  <footer id="footer" class= "d-footer" > 
+      Website created and maintained by " Ramakrishnan P " <br/>
+      Contact by phone : +91 9842378754,  Mail : ramakrishnanp30798@gmail.com
+  </footer>   
+  <script src="{% static "js/funcs.js" %}"> </script>
+</body>
+</html>

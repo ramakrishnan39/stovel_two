@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block stovelbody %}
+    {% if code == 'Login' %}
+    <form action="/users/login/" method="post" class="frm frm-login">
+      {% csrf_token %}
+      <div> Username : <input type="text" id="txt_login_username" class="inp_text" /></div>
+      <div>  Password :  <input type="password" id="pwd_login" class="inp_text" /></div>
+      
+      <input type="submit" value="Login" id="inp_l_sub" class="inp_btn btn_login" />
+    </form>
+    {% endif %}
+    {% if code == 'Signin' %}
+    <form action="/users/signin/" method="post">
+      {% csrf_token %}
+      <div class="frm frm-login">
+        <div> Firstname :  <input type="text" id="txt_r_fname" class="inp_text" > </div> 
+        <div> Lastname :   <input type="text" id="txt_r_lname" class="inp_text"> </div>
+        <div> Email ID :  <input type="email" id="txt_r_email" class="inp_text"> </div>
+        <input type="submit" name="btn_sub" id="inp_r_sub">
+      </div>
+    </form>
+    {% endif %}
+{% endblock %}    

@@ -1,0 +1,10 @@
+.frm{
+  display: flex;
+  border-radius: 2px;
+}
+
+.frm-login
+{
+  display: block;
+  background-color: rgb(154, 231, 103);
+}
